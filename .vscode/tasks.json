@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build: COP3530_Project_2",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "src/main.cpp",
+        "-O2",
+        "-o",
+        "build/COP3530_Project_2.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+    ,
+    {
+      "label": "build: active file",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "${file}",
+        "-O2",
+        "-o",
+        "build/${fileBasenameNoExtension}.exe"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
