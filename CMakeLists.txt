@@ -8,4 +8,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(
     COP3530_Project_2
     src/main.cpp
+    src/KDtree.h
 )
