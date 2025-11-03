@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 #include "kdtree.h"
+#include "QuadTree.h"
 #include "point.h"
 
 int main() {
+    /*
     std::vector<Point> points = {
         Point(2.0, 3.0, "A"),
         Point(5.0, 4.0, "B"),
@@ -23,6 +25,24 @@ int main() {
     std::vector<Point> inRange = tree.rangeSearch(target, radius);
     std::cout << "Points within radius " << radius << " of " << target.toString() << ":" << std::endl;
     for (const auto& pt : inRange) {
+        std::cout << pt.label << " at " << pt.toString() << std::endl;
+    }
+    */
+
+    Rectangle boundary(0.0, 0.0, 100.0, 100.0);
+    QuadTree qt(boundary, 4);
+
+    for (int i = 0; i < 20; ++i) {
+        double x = rand() % 200 - 100; // Random x between -100 and 100
+        double y = rand() % 200 - 100; // Random y between -100 and 100
+        qt.insert(Point(x, y, "P" + std::to_string(i)));
+    }
+
+    Rectangle range(0, 0, 50, 50);
+    std::vector<Point> found;
+    qt.query(range, found);
+    std::cout << "Points found in range:" << std::endl;
+    for (const auto& pt : found) {
         std::cout << pt.label << " at " << pt.toString() << std::endl;
     }
 

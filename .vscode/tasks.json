@@ -9,6 +9,7 @@
         "-std=c++17",
         "-g",
         "src/main.cpp",
+        "src/QuadTree.cpp",
         "-O2",
         "-o",
         "build/COP3530_Project_2.exe"
