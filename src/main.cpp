@@ -60,11 +60,14 @@ int main()
     double inputlon;
     double radiusmult;
 
-    std::cout << "    == Crime Rate Query ==    " << std::endl << std::endl;
+    std::cout << "Crime Rate Query\n\n";
+
     std::cout << "Enter target latitude (between 29.55 and 29.75): ";
     std::cin >> inputlat;
+
     std::cout << "Enter target longitude (between -82.5 and -82.25): ";
     std::cin >> inputlon;
+
     std::cout << "Enter search radius (miles): ";
     std::cin >> radiusmult;
 
